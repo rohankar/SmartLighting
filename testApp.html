@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+
+</head>
+<body>
+
+	<script type="text/javascript">
+	
+	$(function () {
+    $('#container').highcharts({
+        title: {
+            text: 'Average Power Consumption Per Lighbulb Montly',
+            x: -20 //center
+        },
+       
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+        yAxis: {
+            title: {
+                text: 'Kilo Watt Hours'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: 'kWH'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Bulb Drawing',
+            data: [12.0, 13.6, 9.5, 15.43, 13.5, 14.4, 16.5, 15.0, 11.9, 12.46, 17.0, 18.6, 17.9, 21.3]
+        }, {
+            name: 'Bulb Dining',
+            data: [8.0, 11.6, 14.5, 19.43, 16.5, 14.4, 17.5, 18.0, 18.9, 19.46, 16.0, 18.6, 17.9, 15.3]
+        }, {
+            name: 'Bulb Bedroom1',
+            data: [17.0, 18.6, 17.5, 11.43, 13.5, 14.4, 13.5, 9.0, 8.9, 12.46, 17.0, 18.6, 17.9, 14.3]
+        }, {
+            name: 'Bulb Bedroom2',
+            data: [18.0, 18.6, 17.5, 14.43, 13.5, 14.4, 11.5, 9.0, 8.9, 12.46, 16.0, 18.6, 17.9, 14.3]
+        }]
+    });
+});
+
+	</script>
+
+	
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+</body>
+</html>
